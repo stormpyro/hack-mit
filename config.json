@@ -1,0 +1,5 @@
+{
+    "mongodb": {
+        "uri": "mongodb+srv://contacto:tOTq2hBNZTACT1fg@cluster0.v3zeq.mongodb.net/hackMIT?retryWrites=true&w=majority"
+    }
+}
