@@ -30,5 +30,5 @@ func main() {
 	e.Use(middleware.CORSWithConfig(middleware.DefaultCORSConfig))
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
 	config.InitHandlers(e)
-	e.Logger.Fatal(e.StartTLS(":3000", "certs/Certificate.crt", "certs/Private.key"))
+	e.Logger.Fatal(e.StartTLS(":443", "certs/Certificate.crt", "certs/Private.key"))
 }
