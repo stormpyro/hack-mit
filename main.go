@@ -2,7 +2,6 @@ package main
 
 import (
 	"hack-mit/config"
-	"os"
 
 	_ "hack-mit/docs"
 
@@ -31,5 +30,5 @@ func main() {
 	e.Use(middleware.CORSWithConfig(middleware.DefaultCORSConfig))
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
 	config.InitHandlers(e)
-	e.Logger.Fatal(e.StartTLS(os.Getenv("PORT"), "certs/Certificate.crt", "certs/Private.key"))
+	e.Logger.Fatal(e.StartTLS(":3000", "certs/Certificate.crt", "certs/Private.key"))
 }
