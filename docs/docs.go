@@ -43,7 +43,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Applicant"
+                    "Del solicitante"
                 ],
                 "summary": "Add a new applicant",
                 "parameters": [
@@ -83,7 +83,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Ground"
+                    "Del terreno"
                 ],
                 "summary": "Add a new ground",
                 "parameters": [
@@ -123,7 +123,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Land Titling"
+                    "De la titulación del predio"
                 ],
                 "summary": "Add a new land titling",
                 "parameters": [
@@ -163,7 +163,7 @@ var doc = `{
                     "application/json"
                 ],
                 "tags": [
-                    "Licence Application"
+                    "Solicitud de licencia de edificación"
                 ],
                 "summary": "Add a new licence application",
                 "parameters": [

@@ -24,7 +24,7 @@ func NewFueHandler(r *echo.Group, us Usecase) {
 
 // @Summary Add a new applicant
 // @Description	Add a new applicant
-// @Tags	Applicant
+// @Tags	Del solicitante
 // @Accept	json
 // @Produce	json
 // @Param applicant	body	models.Applicant	true	"New applicant"
@@ -46,7 +46,7 @@ func (h *FueHandler) AddNewApplicant(ctx echo.Context) error {
 
 // @Summary Add a new ground
 // @Description	Add a new ground
-// @Tags	Ground
+// @Tags	Del terreno
 // @Accept	json
 // @Produce	json
 // @Param applicant	body	models.Ground	true	"New ground"
@@ -68,7 +68,7 @@ func (h *FueHandler) AddNewGround(ctx echo.Context) error {
 
 // @Summary Add a new land titling
 // @Description	Add a new land titling
-// @Tags	Land Titling
+// @Tags	De la titulación del predio
 // @Accept	json
 // @Produce	json
 // @Param applicant	body	models.Ground	true	"New land titling"
@@ -90,7 +90,7 @@ func (h *FueHandler) AddNewLandTitling(ctx echo.Context) error {
 
 // @Summary Add a new licence application
 // @Description	Add a new request to get a licence application
-// @Tags	Licence Application
+// @Tags	Solicitud de licencia de edificación
 // @Accept	json
 // @Produce	json
 // @Param applicant	body	models.LicenceApplication	true	"New licence application"

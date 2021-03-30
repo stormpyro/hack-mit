@@ -29,7 +29,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Applicant"
+                    "Del solicitante"
                 ],
                 "summary": "Add a new applicant",
                 "parameters": [
@@ -69,7 +69,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Ground"
+                    "Del terreno"
                 ],
                 "summary": "Add a new ground",
                 "parameters": [
@@ -109,7 +109,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Land Titling"
+                    "De la titulación del predio"
                 ],
                 "summary": "Add a new land titling",
                 "parameters": [
@@ -149,7 +149,7 @@
                     "application/json"
                 ],
                 "tags": [
-                    "Licence Application"
+                    "Solicitud de licencia de edificación"
                 ],
                 "summary": "Add a new licence application",
                 "parameters": [

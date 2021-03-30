@@ -186,7 +186,7 @@ paths:
             $ref: '#/definitions/models.ResponseError'
       summary: Add a new applicant
       tags:
-      - Applicant
+      - Del solicitante
   /api/v1/ground:
     post:
       consumes:
@@ -212,7 +212,7 @@ paths:
             $ref: '#/definitions/models.ResponseError'
       summary: Add a new ground
       tags:
-      - Ground
+      - Del terreno
   /api/v1/landtitling:
     post:
       consumes:
@@ -238,7 +238,7 @@ paths:
             $ref: '#/definitions/models.ResponseError'
       summary: Add a new land titling
       tags:
-      - Land Titling
+      - De la titulación del predio
   /api/v1/licenceapplication:
     post:
       consumes:
@@ -264,7 +264,7 @@ paths:
             $ref: '#/definitions/models.ResponseError'
       summary: Add a new licence application
       tags:
-      - Licence Application
+      - Solicitud de licencia de edificación
 schemes:
 - https
 swagger: "2.0"
