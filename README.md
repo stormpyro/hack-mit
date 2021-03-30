@@ -52,7 +52,7 @@ You need a config.json file with the mongo db uri from your mongo atlas cluster 
 ```
 {
     "mongodb": {
-        "uri": "mongodb+srv://contacto:<password>@cluster0.v3zeq.mongodb.net/<yourDB>?retryWrites=true&w=majority"
+        "uri": "mongodb+srv:mongouri"
     }
 }
 ```
