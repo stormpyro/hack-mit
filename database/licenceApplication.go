@@ -2,6 +2,7 @@ package database
 
 import (
 	"context"
+	"fmt"
 	"hack-mit/models"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -18,9 +19,10 @@ func GetLicenceApplicationCollection() *LicenceApplicationCollection {
 }
 
 func (la *LicenceApplicationCollection) AddNewLicence(ctx context.Context, request *models.LicenceApplication) (*models.LicenceApplication, error) {
-	if len(request.ID) > 0 {
+	if len(request.ID) == 0 {
 		request.ID = primitive.NewObjectID().Hex()
 	}
+	fmt.Println(request)
 	_, err := la.collection.InsertOne(ctx, request)
 	if err != nil {
 		return nil, err

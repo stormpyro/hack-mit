@@ -1,0 +1,414 @@
+{
+    "schemes": [
+        "https"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server for hack MIT.",
+        "title": "Swagger Hack MIT API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "renattominayarojas@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/applicant": {
+            "post": {
+                "description": "Add a new applicant",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Applicant"
+                ],
+                "summary": "Add a new applicant",
+                "parameters": [
+                    {
+                        "description": "New applicant",
+                        "name": "applicant",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Applicant"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseSuccess"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/ground": {
+            "post": {
+                "description": "Add a new ground",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Ground"
+                ],
+                "summary": "Add a new ground",
+                "parameters": [
+                    {
+                        "description": "New ground",
+                        "name": "applicant",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Ground"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseSuccess"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/landtitling": {
+            "post": {
+                "description": "Add a new land titling",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Land Titling"
+                ],
+                "summary": "Add a new land titling",
+                "parameters": [
+                    {
+                        "description": "New land titling",
+                        "name": "applicant",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Ground"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseSuccess"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/licenceapplication": {
+            "post": {
+                "description": "Add a new request to get a licence application",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Licence Application"
+                ],
+                "summary": "Add a new licence application",
+                "parameters": [
+                    {
+                        "description": "New licence application",
+                        "name": "applicant",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.LicenceApplication"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseSuccess"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseError"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Address": {
+            "type": "object",
+            "properties": {
+                "apartment": {
+                    "type": "string"
+                },
+                "apple": {
+                    "type": "integer"
+                },
+                "district": {
+                    "type": "string"
+                },
+                "interior": {
+                    "type": "integer"
+                },
+                "portion": {
+                    "type": "integer"
+                },
+                "province": {
+                    "type": "string"
+                },
+                "street": {
+                    "type": "string"
+                },
+                "streetNumber": {
+                    "type": "integer"
+                },
+                "subPortion": {
+                    "type": "integer"
+                },
+                "urbanization": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Applicant": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "legalPerson": {
+                    "$ref": "#/definitions/models.LegalPerson"
+                },
+                "legalRepresentant": {
+                    "$ref": "#/definitions/models.LegalRepresentant"
+                },
+                "naturalPerson": {
+                    "$ref": "#/definitions/models.NaturalPerson"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Ground": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "perimeterMeasurements": {
+                    "$ref": "#/definitions/models.PerimeterMeasurements"
+                },
+                "ubication": {
+                    "$ref": "#/definitions/models.Address"
+                }
+            }
+        },
+        "models.LegalPerson": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "$ref": "#/definitions/models.Address"
+                },
+                "businessName": {
+                    "type": "string"
+                },
+                "ruc": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.LegalRepresentant": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "$ref": "#/definitions/models.Address"
+                },
+                "dni": {
+                    "type": "integer"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "mandatRegister": {
+                    "type": "boolean"
+                },
+                "mercantilRegister": {
+                    "type": "boolean"
+                },
+                "mothersLastName": {
+                    "type": "string"
+                },
+                "names": {
+                    "type": "string"
+                },
+                "officeRegister": {
+                    "type": "string"
+                },
+                "powerInscribedIn": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.LicenceApplication": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "annexes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "approvalModality": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "constructionType": {
+                    "type": "string"
+                },
+                "dateInit": {
+                    "type": "integer"
+                },
+                "transactionType": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.NaturalPerson": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "$ref": "#/definitions/models.Address"
+                },
+                "civilState": {
+                    "type": "string"
+                },
+                "dni": {
+                    "type": "integer"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "mothersLastName": {
+                    "type": "string"
+                },
+                "names": {
+                    "type": "string"
+                },
+                "spouse": {
+                    "$ref": "#/definitions/models.Spouse"
+                }
+            }
+        },
+        "models.PerimeterMeasurements": {
+            "type": "object",
+            "properties": {
+                "fromTheBackground": {
+                    "type": "number"
+                },
+                "fromTheFront": {
+                    "type": "number"
+                },
+                "fromTheLeft": {
+                    "type": "number"
+                },
+                "fromTheRight": {
+                    "type": "number"
+                },
+                "totalArea": {
+                    "type": "number"
+                }
+            }
+        },
+        "models.ResponseError": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ResponseSuccess": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Spouse": {
+            "type": "object",
+            "properties": {
+                "MothersLastName": {
+                    "type": "string"
+                },
+                "dni": {
+                    "type": "integer"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "names": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,270 @@
+definitions:
+  models.Address:
+    properties:
+      apartment:
+        type: string
+      apple:
+        type: integer
+      district:
+        type: string
+      interior:
+        type: integer
+      portion:
+        type: integer
+      province:
+        type: string
+      street:
+        type: string
+      streetNumber:
+        type: integer
+      subPortion:
+        type: integer
+      urbanization:
+        type: string
+    type: object
+  models.Applicant:
+    properties:
+      _id:
+        type: string
+      legalPerson:
+        $ref: '#/definitions/models.LegalPerson'
+      legalRepresentant:
+        $ref: '#/definitions/models.LegalRepresentant'
+      naturalPerson:
+        $ref: '#/definitions/models.NaturalPerson'
+      type:
+        type: string
+    type: object
+  models.Ground:
+    properties:
+      _id:
+        type: string
+      perimeterMeasurements:
+        $ref: '#/definitions/models.PerimeterMeasurements'
+      ubication:
+        $ref: '#/definitions/models.Address'
+    type: object
+  models.LegalPerson:
+    properties:
+      address:
+        $ref: '#/definitions/models.Address'
+      businessName:
+        type: string
+      ruc:
+        type: integer
+    type: object
+  models.LegalRepresentant:
+    properties:
+      address:
+        $ref: '#/definitions/models.Address'
+      dni:
+        type: integer
+      lastName:
+        type: string
+      mandatRegister:
+        type: boolean
+      mercantilRegister:
+        type: boolean
+      mothersLastName:
+        type: string
+      names:
+        type: string
+      officeRegister:
+        type: string
+      powerInscribedIn:
+        type: string
+      type:
+        type: string
+    type: object
+  models.LicenceApplication:
+    properties:
+      _id:
+        type: string
+      annexes:
+        items:
+          type: string
+        type: array
+      approvalModality:
+        items:
+          type: string
+        type: array
+      constructionType:
+        type: string
+      dateInit:
+        type: integer
+      transactionType:
+        type: string
+    type: object
+  models.NaturalPerson:
+    properties:
+      address:
+        $ref: '#/definitions/models.Address'
+      civilState:
+        type: string
+      dni:
+        type: integer
+      lastName:
+        type: string
+      mothersLastName:
+        type: string
+      names:
+        type: string
+      spouse:
+        $ref: '#/definitions/models.Spouse'
+    type: object
+  models.PerimeterMeasurements:
+    properties:
+      fromTheBackground:
+        type: number
+      fromTheFront:
+        type: number
+      fromTheLeft:
+        type: number
+      fromTheRight:
+        type: number
+      totalArea:
+        type: number
+    type: object
+  models.ResponseError:
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+    type: object
+  models.ResponseSuccess:
+    properties:
+      message:
+        type: string
+    type: object
+  models.Spouse:
+    properties:
+      MothersLastName:
+        type: string
+      dni:
+        type: integer
+      lastName:
+        type: string
+      names:
+        type: string
+    type: object
+info:
+  contact:
+    email: renattominayarojas@gmail.com
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server for hack MIT.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Hack MIT API
+  version: "1.0"
+paths:
+  /api/v1/applicant:
+    post:
+      consumes:
+      - application/json
+      description: Add a new applicant
+      parameters:
+      - description: New applicant
+        in: body
+        name: applicant
+        required: true
+        schema:
+          $ref: '#/definitions/models.Applicant'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseSuccess'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Add a new applicant
+      tags:
+      - Applicant
+  /api/v1/ground:
+    post:
+      consumes:
+      - application/json
+      description: Add a new ground
+      parameters:
+      - description: New ground
+        in: body
+        name: applicant
+        required: true
+        schema:
+          $ref: '#/definitions/models.Ground'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseSuccess'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Add a new ground
+      tags:
+      - Ground
+  /api/v1/landtitling:
+    post:
+      consumes:
+      - application/json
+      description: Add a new land titling
+      parameters:
+      - description: New land titling
+        in: body
+        name: applicant
+        required: true
+        schema:
+          $ref: '#/definitions/models.Ground'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseSuccess'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Add a new land titling
+      tags:
+      - Land Titling
+  /api/v1/licenceapplication:
+    post:
+      consumes:
+      - application/json
+      description: Add a new request to get a licence application
+      parameters:
+      - description: New licence application
+        in: body
+        name: applicant
+        required: true
+        schema:
+          $ref: '#/definitions/models.LicenceApplication'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseSuccess'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ResponseError'
+      summary: Add a new licence application
+      tags:
+      - Licence Application
+schemes:
+- https
+swagger: "2.0"

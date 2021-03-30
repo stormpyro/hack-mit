@@ -22,6 +22,15 @@ func NewFueHandler(r *echo.Group, us Usecase) {
 	r.POST("/licenceapplication", handler.AddNewLicence)
 }
 
+// @Summary Add a new applicant
+// @Description	Add a new applicant
+// @Tags	Applicant
+// @Accept	json
+// @Produce	json
+// @Param applicant	body	models.Applicant	true	"New applicant"
+// @Success	200	{object}	models.ResponseSuccess
+// @Failure	500	{object}	models.ResponseError
+// @Router	/api/v1/applicant	[post]
 func (h *FueHandler) AddNewApplicant(ctx echo.Context) error {
 	applicant := models.Applicant{}
 	errDecode := json.NewDecoder(ctx.Request().Body).Decode(&applicant)
@@ -35,6 +44,15 @@ func (h *FueHandler) AddNewApplicant(ctx echo.Context) error {
 	return ctx.JSON(200, success)
 }
 
+// @Summary Add a new ground
+// @Description	Add a new ground
+// @Tags	Ground
+// @Accept	json
+// @Produce	json
+// @Param applicant	body	models.Ground	true	"New ground"
+// @Success	200	{object}	models.ResponseSuccess
+// @Failure	500	{object}	models.ResponseError
+// @Router	/api/v1/ground	[post]
 func (h *FueHandler) AddNewGround(ctx echo.Context) error {
 	ground := models.Ground{}
 	errDecode := json.NewDecoder(ctx.Request().Body).Decode(&ground)
@@ -48,6 +66,15 @@ func (h *FueHandler) AddNewGround(ctx echo.Context) error {
 	return ctx.JSON(200, success)
 }
 
+// @Summary Add a new land titling
+// @Description	Add a new land titling
+// @Tags	Land Titling
+// @Accept	json
+// @Produce	json
+// @Param applicant	body	models.Ground	true	"New land titling"
+// @Success	200	{object}	models.ResponseSuccess
+// @Failure	500	{object}	models.ResponseError
+// @Router	/api/v1/landtitling	[post]
 func (h *FueHandler) AddNewLandTitling(ctx echo.Context) error {
 	landTitling := models.LandTitling{}
 	errDecode := json.NewDecoder(ctx.Request().Body).Decode(&landTitling)
@@ -61,6 +88,15 @@ func (h *FueHandler) AddNewLandTitling(ctx echo.Context) error {
 	return ctx.JSON(200, success)
 }
 
+// @Summary Add a new licence application
+// @Description	Add a new request to get a licence application
+// @Tags	Licence Application
+// @Accept	json
+// @Produce	json
+// @Param applicant	body	models.LicenceApplication	true	"New licence application"
+// @Success	200	{object}	models.ResponseSuccess
+// @Failure	500	{object}	models.ResponseError
+// @Router	/api/v1/licenceapplication	[post]
 func (h *FueHandler) AddNewLicence(ctx echo.Context) error {
 	licence := models.LicenceApplication{}
 	errDecode := json.NewDecoder(ctx.Request().Body).Decode(&licence)

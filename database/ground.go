@@ -18,7 +18,7 @@ func GetGroundCollection() *GroundCollection {
 }
 
 func (g *GroundCollection) AddNewGround(ctx context.Context, newGround *models.Ground) (*models.Ground, error) {
-	if len(newGround.ID) > 0 {
+	if len(newGround.ID) == 0 {
 		newGround.ID = primitive.NewObjectID().Hex()
 	}
 	_, err := g.collection.InsertOne(ctx, newGround)

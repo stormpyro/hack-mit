@@ -18,7 +18,7 @@ func GetApplicantCollection() *ApplicantCollection {
 }
 
 func (ac *ApplicantCollection) AddNewApplicant(ctx context.Context, newApplicant *models.Applicant) (*models.Applicant, error) {
-	if len(newApplicant.ID) > 0 {
+	if len(newApplicant.ID) == 0 {
 		newApplicant.ID = primitive.NewObjectID().Hex()
 	}
 	_, err := ac.collection.InsertOne(ctx, newApplicant)
