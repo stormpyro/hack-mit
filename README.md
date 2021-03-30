@@ -20,6 +20,8 @@ nodemon --exec go run . --ext go
 http://localhost:3000/swagger/index.html
 ```
 
+![alt text](./demo.png)
+
 ## Clean architecture layers
 
 - <b>Database</b>  
@@ -31,8 +33,6 @@ http://localhost:3000/swagger/index.html
   In the project there is a folder called services. Here you can write all the services that you want, in this case there is a service called fue. Each service needs to handle data sent by the user. This is exactly what deliver layer do. So each service needs a file called deliver.go wich will handle all data sent by the user, then call usecase functions to manage this data and retrieves the result or a http error.
 
 ## Packages used
-
----
 
 - MongoDB driver: \
   https://github.com/mongodb/mongo-go-driver
@@ -46,8 +46,6 @@ http://localhost:3000/swagger/index.html
   https://github.com/spf13/viper
 
 ## Note
-
----
 
 You need a config.json file with the mongo db uri from your mongo atlas cluster or your local mongo like this.
 

@@ -266,5 +266,6 @@ paths:
       tags:
       - Solicitud de licencia de edificación
 schemes:
+- http
 - https
 swagger: "2.0"

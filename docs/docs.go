@@ -441,7 +441,7 @@ var SwaggerInfo = swaggerInfo{
 	Version:     "1.0",
 	Host:        "",
 	BasePath:    "",
-	Schemes:     []string{"https"},
+	Schemes:     []string{"http", "https"},
 	Title:       "Swagger Hack MIT API",
 	Description: "This is a sample server for hack MIT.",
 }
