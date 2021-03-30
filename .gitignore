@@ -2,3 +2,5 @@ dist/
 logs/
 *.log
 *.exe
+config.json
+certs/
