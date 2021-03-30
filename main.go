@@ -35,5 +35,5 @@ func main() {
 	if port == "" {
 		port = "3000"
 	}
-	e.Start(":" + port)
+	e.StartTLS(":"+port, "certs/Certificate.crt", "certs/Private.key")
 }
